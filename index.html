@@ -45,12 +45,21 @@
 				100%{bottom:-150px; left:760px;opacity:0;}
 			}
              audio{display:none;}
+		 .music{
+			 width: 300px;
+			 height: 30px;
+			 padding: 2px;
+			 position: absolute;
+			 bottom:20px;
+			 left:0;
+		 }
 		 </style>
 	 </head>
  <body>
+ 		<div class="music">
+			<audio src="like.mp3" autoplay controls   loop="loop"></audio>
+		</div>
 		<div class="dengziqi">
-            <audio src="like.mp3" autoplay controls   loop="loop">
-            </audio>
 			<div class="scene">
 				<ul>
 					<li><img src="images/2.jpg"/></li>
@@ -74,11 +83,16 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/snowfall.jquery.js"></script>
 <script>
+	$('.music').mouseover(function () {
+		 $('audio').css('display','block')
+	}).mouseout(function(){
+		$('audio').css('display','none')
+	})
 	$(document).snowfall('clear');
 	$(document).snowfall({
 		image: "images/huaban.png",
-		flakeCount:80,
-		minSize: 2,
+		flakeCount:100,
+		minSize: 10,
 		maxSize: 15
 	});
 </script>
